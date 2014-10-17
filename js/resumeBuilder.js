@@ -1,3 +1,9 @@
+//function to to help replace data in helper.js string variables
+String.prototype.replaceData = function(data)
+{
+	return this.replace("%data%",data);
+}
+
 
 var bio = {
 	"name": "Kevin Mayo",
@@ -10,7 +16,27 @@ var bio = {
 	},
 	"skills": [ "HTML", "CSS", "JavaScript", "PHP", "MySQL", "C/C++" ],
 	"pic": "https://raw.githubusercontent.com/kevdonk/fendp1/master/img/donk.jpg",
-	"message": "Welcome..."
+	"message": "Welcome...",
+	display : function() {
+	//header
+	$("#header").prepend(HTMLheaderRole.replaceData(bio.role));
+	$("#header").prepend(HTMLheaderName.replaceData(bio.name));
+	$("#header").prepend(HTMLbioPic.replaceData(bio.pic));
+	//contact
+	$("#topContacts").prepend(HTMLemail.replaceData(bio.contact.email));
+	$("#topContacts").prepend(HTMLgithub.replaceData(bio.contact.github));
+	$("#topContacts").prepend(HTMLtwitter.replaceData(bio.contact.twitter));
+	$("#topContacts").prepend(HTMLlocation.replaceData(bio.contact.location));
+	//skills
+	//write skills section
+	if(bio.skills.length > 0)
+			$("#header").append(HTMLskillsStart);
+	for (skill in bio.skills)
+		$("#skills").append(HTMLskills.replaceData(bio.skills[skill]));
+
+	//welcome message
+	$("#header").append(HTMLwelcomeMsg.replaceData(bio.message));
+	}
 };
 
 var education = {
@@ -18,15 +44,17 @@ var education = {
 	{
 		"name": "Athabasca University",
 		"location": "Athabasca, AB",
-		"degree": "BSc CIS",
-		"dates": "In Progress",
+		"degree": "BSc",
+		"major": "Computing & Information Systems",
+		"dates": "2014 - Present",
 		"url": "http://www.athabascau.ca/"
 	},
 	{
 		"name": "University of Alberta",
 		"location": "Edmonton, AB",
 		"degree": "BCom",
-		"dates": 2010,
+		"major": "Finance",
+		"dates": "2005-2010",
 		"url": "http://business.ualberta.ca/"
 	}
 	], 
@@ -43,7 +71,30 @@ var education = {
 		"dates": 2014,
 		"url": "https://www.codeschool.com/users/864567"
 	}
-	]
+	],
+	display : function(){
+		//write education section
+		for(school in education.schools) {
+			var current = education.schools[school];
+			$("#education").append(HTMLschoolStart);
+			$(".education-entry:last").append(HTMLschoolName.replaceData(current.name).replace("#",current.url));
+			$(".education-entry:last").append(HTMLschoolDegree.replaceData(current.degree));
+			$(".education-entry:last").append(HTMLschoolDates.replaceData(current.dates));
+			$(".education-entry:last").append(HTMLschoolLocation.replaceData(current.location));
+			$(".education-entry:last").append(HTMLschoolMajor.replaceData(current.major));
+		}
+
+		$("#education").append(HTMLonlineClasses);
+		for(course in education.onlineCourses) {
+			var current = education.onlineCourses[course];
+			$("#education").append(HTMLschoolStart);
+			$(".education-entry:last").append(HTMLonlineTitle.replaceData(current.title));
+			$(".education-entry:last").append(HTMLonlineSchool.replaceData(current.school));
+			$(".education-entry:last").append(HTMLonlineDates.replaceData(current.dates));
+			$(".education-entry:last").append(HTMLonlineURL.replaceData(current.url));
+		}
+
+	}
 }
 
 var work =
@@ -51,35 +102,81 @@ var work =
 	"jobs": [
 {
 	"employer": "Mayo Industrial & Automotive Sales Ltd.",
-	"title": "Network Admin",
+	"title": "'Hey, my computer's broken'",
 	"location": "Edmonton, AB",
-	"dates": "Jan 2011 - Current",
-	"description": "Purchase, set up and maintain network hardware and develop internal and external websites"
+	"dates": "Jan 2011 - Present",
+	"description": "Purchase, set up and maintain computers network hardware and develop internal and external websites"
 }
-	]
+	],
+	display : function(){
+	//write job section
+	for (job in work.jobs) {
+		var current = work.jobs[job];
+		$("#workExperience").append(HTMLworkStart);
+		$(".work-entry:last").append(HTMLworkEmployer.replaceData(current.employer) + HTMLworkTitle.replaceData(current.title));
+		$(".work-entry:last").append(HTMLworkDates.replaceData(current.dates));
+		$(".work-entry:last").append(HTMLworkLocation.replaceData(current.location));
+		$(".work-entry:last").append(HTMLworkDescription.replaceData(current.description));
+	}
+	}
 }
 
 var projects = {
 	"projects": [
 	{
+		"title": "Delivery Manager",
+		"dates": "Feb 2014 - Present",
+		"description": "Web application to track delivery driver routes using MySQL, PHP and the Google Maps API",
+		"url": "http://mayoind.com/driver/",
+		"images": [
+		"img/dm.jpg"
+		]
+	},
+	{
 		"title": "c.qb45.com",
 		"dates": "2000-2002",
 		"description": "Manage website and forums of the C/C++ and PHP sections of a (then) popular coding community",
+		"url": "http://c.qb45.com",
 		"images": [
 		"http://www.qb45.com/link_qb45.gif"
 		]
 	}
-	]
+
+	],
+	display : function(){
+		for (project in projects.projects) {
+			var current = projects.projects[project];
+			$("#projects").append(HTMLprojectStart);
+			$(".project-entry:last").append(HTMLprojectTitle.replaceData(current.title).replace("#",current.url));
+			$(".project-entry:last").append(HTMLprojectDates.replaceData(current.dates));
+			$(".project-entry:last").append(HTMLprojectDescription.replaceData(current.description));
+			if(current.images.length >0){
+				for(image in current.images){
+					$(".project-entry:last").append(HTMLprojectImage.replaceData(current.images))
+				}
+			}
+
+
+		}
+
+	}
 }
 
-$("#header").prepend(HTMLheaderRole.replace("%data%", bio.role));
-$("#header").prepend(HTMLheaderName.replace("%data%", bio.name));
 
+bio.display();
+work.display();
+projects.display();
+education.display();
 
-$("#footerContacts").prepend(HTMLemail.replace("%data%", bio.contact.email));
-$("#footerContacts").prepend(HTMLgithub.replace("%data%", bio.contact.github));
-$("#footerContacts").prepend(HTMLtwitter.replace("%data%", bio.contact.twitter));
-$("#footerContacts").prepend(HTMLlocation.replace("%data%", bio.contact.location));
+//internationalize name
+function inName(oldName)
+{
+	var newName = oldName.trim().split(" ");
+	newName[0] = newName[0].slice(0,1).toUpperCase() + newName[0].slice(1).toLowerCase();
+	newName[1] = newName[1].toUpperCase();
 
+	return newName[0] + " " + newName[1];
+}
 
-
+//draw map 
+$("#mapDiv").append(googleMap);
