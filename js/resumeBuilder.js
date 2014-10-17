@@ -1,6 +1,7 @@
-//function to to help replace data in helper.js string variables
+
 String.prototype.replaceData = function(data)
 {
+	//function to to help replace data in helper.js string variables
 	return this.replace("%data%",data);
 }
 
@@ -18,24 +19,23 @@ var bio = {
 	"pic": "https://raw.githubusercontent.com/kevdonk/fendp1/master/img/donk.jpg",
 	"message": "Welcome...",
 	display : function() {
-	//header
-	$("#header").prepend(HTMLheaderRole.replaceData(bio.role));
-	$("#header").prepend(HTMLheaderName.replaceData(bio.name));
-	$("#header").prepend(HTMLbioPic.replaceData(bio.pic));
-	//contact
-	$("#topContacts").prepend(HTMLemail.replaceData(bio.contact.email));
-	$("#topContacts").prepend(HTMLgithub.replaceData(bio.contact.github));
-	$("#topContacts").prepend(HTMLtwitter.replaceData(bio.contact.twitter));
-	$("#topContacts").prepend(HTMLlocation.replaceData(bio.contact.location));
-	//skills
-	//write skills section
-	if(bio.skills.length > 0)
-			$("#header").append(HTMLskillsStart);
-	for (skill in bio.skills)
-		$("#skills").append(HTMLskills.replaceData(bio.skills[skill]));
+		//header
+		$("#header").prepend(HTMLheaderRole.replaceData(bio.role));
+		$("#header").prepend(HTMLheaderName.replaceData(bio.name));
+		$("#header").prepend(HTMLbioPic.replaceData(bio.pic));
+		//contact
+		$("#topContacts").prepend(HTMLemail.replaceData(bio.contact.email));
+		$("#topContacts").prepend(HTMLgithub.replaceData(bio.contact.github));
+		$("#topContacts").prepend(HTMLtwitter.replaceData(bio.contact.twitter));
+		$("#topContacts").prepend(HTMLlocation.replaceData(bio.contact.location));
+		//write skills section
+		if(bio.skills.length > 0)
+				$("#header").append(HTMLskillsStart);
+		for (skill in bio.skills)
+			$("#skills").append(HTMLskills.replaceData(bio.skills[skill]));
 
-	//welcome message
-	$("#header").append(HTMLwelcomeMsg.replaceData(bio.message));
+		//welcome message
+		$("#header").append(HTMLwelcomeMsg.replaceData(bio.message));
 	}
 };
 
@@ -88,10 +88,9 @@ var education = {
 		for(course in education.onlineCourses) {
 			var current = education.onlineCourses[course];
 			$("#education").append(HTMLschoolStart);
-			$(".education-entry:last").append(HTMLonlineTitle.replaceData(current.title));
+			$(".education-entry:last").append(HTMLonlineTitle.replaceData(current.title).replace("#",current.url));
 			$(".education-entry:last").append(HTMLonlineSchool.replaceData(current.school));
 			$(".education-entry:last").append(HTMLonlineDates.replaceData(current.dates));
-			$(".education-entry:last").append(HTMLonlineURL.replaceData(current.url));
 		}
 
 	}
@@ -105,19 +104,20 @@ var work =
 	"title": "'Hey, my computer's broken'",
 	"location": "Edmonton, AB",
 	"dates": "Jan 2011 - Present",
-	"description": "Purchase, set up and maintain computers network hardware and develop internal and external websites"
+	"description": "Purchase, set up and maintain computers network hardware and develop internal and external websites",
+	"url": "http://mayoind.com"
 }
 	],
 	display : function(){
-	//write job section
-	for (job in work.jobs) {
-		var current = work.jobs[job];
-		$("#workExperience").append(HTMLworkStart);
-		$(".work-entry:last").append(HTMLworkEmployer.replaceData(current.employer) + HTMLworkTitle.replaceData(current.title));
-		$(".work-entry:last").append(HTMLworkDates.replaceData(current.dates));
-		$(".work-entry:last").append(HTMLworkLocation.replaceData(current.location));
-		$(".work-entry:last").append(HTMLworkDescription.replaceData(current.description));
-	}
+		//write job section
+		for (job in work.jobs) {
+			var current = work.jobs[job];
+			$("#workExperience").append(HTMLworkStart);
+			$(".work-entry:last").append(HTMLworkEmployer.replaceData(current.employer).replace("#", current.url) + HTMLworkTitle.replaceData(current.title));
+			$(".work-entry:last").append(HTMLworkDates.replaceData(current.dates));
+			$(".work-entry:last").append(HTMLworkLocation.replaceData(current.location));
+			$(".work-entry:last").append(HTMLworkDescription.replaceData(current.description));
+		}
 	}
 }
 
@@ -144,6 +144,7 @@ var projects = {
 
 	],
 	display : function(){
+	//write projects section
 		for (project in projects.projects) {
 			var current = projects.projects[project];
 			$("#projects").append(HTMLprojectStart);
@@ -162,21 +163,11 @@ var projects = {
 	}
 }
 
-
+//call display functions
 bio.display();
 work.display();
 projects.display();
 education.display();
-
-//internationalize name
-function inName(oldName)
-{
-	var newName = oldName.trim().split(" ");
-	newName[0] = newName[0].slice(0,1).toUpperCase() + newName[0].slice(1).toLowerCase();
-	newName[1] = newName[1].toUpperCase();
-
-	return newName[0] + " " + newName[1];
-}
 
 //draw map 
 $("#mapDiv").append(googleMap);
