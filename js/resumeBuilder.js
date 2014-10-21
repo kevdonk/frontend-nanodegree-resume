@@ -16,7 +16,7 @@ var bio = {
 	"location": "Edmonton, Alberta"
 	},
 	"skills": [ "HTML", "CSS", "JavaScript", "PHP", "MySQL", "C/C++" ],
-	"pic": "https://raw.githubusercontent.com/kevdonk/fendp1/master/img/donk.jpg",
+	"pic": "img/donk.jpg",
 	"message": "",
 	display : function() {
 		//header
