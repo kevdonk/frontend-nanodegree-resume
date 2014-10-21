@@ -101,7 +101,7 @@ var work =
 	"title": "Whatever needs doing",
 	"location": "Edmonton, AB",
 	"dates": "Jan 2011 - Present",
-	"description": "Purchase, set up and maintain computers network hardware and develop internal and external websites",
+	"description": "Purchase, set up and maintain computers and network hardware and develop internal and external websites",
 	"url": "http://mayoind.com"
 }
 	],
