@@ -124,7 +124,7 @@ var projects = {
 	{
 		"title": "Delivery Manager",
 		"dates": "Feb 2014 - Present",
-		"description": "Building web application to manage delivery driver routes and provide real-time directions via Google Mobiles on drivers' mobile devices",
+		"description": "Building web application to manage delivery driver routes and provide real-time directions via Google Maps on drivers' mobile devices",
 		"url": "http://mayoind.com/driver/",
 		"images": [
 		"img/dm.jpg"
