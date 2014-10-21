@@ -25,7 +25,7 @@ $(document).ready(function(){
 	});
 	$("#h2Map").click(function(){
 		$(this).toggleArrow();
-		$("#map").slideToggle(100);
+		$("#mapDiv").slideToggle(100);
 	});
 
 });

@@ -17,7 +17,7 @@ var bio = {
 	},
 	"skills": [ "HTML", "CSS", "JavaScript", "PHP", "MySQL", "C/C++" ],
 	"pic": "https://raw.githubusercontent.com/kevdonk/fendp1/master/img/donk.jpg",
-	"message": "Welcome...",
+	"message": "",
 	display : function() {
 		//header
 		$("#header").prepend(HTMLheaderRole.replaceData(bio.role));
@@ -57,7 +57,7 @@ var education = {
 	{
 		"title": "Front-End Web Developer Nanodegree",
 		"school": "Udacity",
-		"dates": 2014,
+		"dates": "2014-Present",
 		"url": "https://www.udacity.com/course/nd001"
 	},
 	{
@@ -124,7 +124,7 @@ var projects = {
 	{
 		"title": "Delivery Manager",
 		"dates": "Feb 2014 - Present",
-		"description": "Web application to track delivery driver routes using MySQL, PHP and the Google Maps API",
+		"description": "Building web application to manage delivery driver routes and provide real-time directions via Google Mobiles on drivers' mobile devices",
 		"url": "http://mayoind.com/driver/",
 		"images": [
 		"img/dm.jpg"

@@ -6,6 +6,7 @@
 
 body {
   background-color: #333333;
+  color: #EEEEEE;
 }
 
 
@@ -25,6 +26,11 @@ body {
   background-color: #111111;
 }
 
+#mapSection {
+  border-top: 3px solid #3069FF;
+  background-color: #111111;
+}
+
 #map {
   display: block;
   height: 100%;
@@ -36,8 +42,6 @@ body {
   height: 400px;
   width: 100%;
   padding-bottom: 5%;
-  border-top: 3px solid #3069FF;
-  background-color: #111111;
 }
 
 #h2Work {
@@ -50,6 +54,18 @@ body {
 
 #h2Projects {
   color: #137F00;
+}
+
+#workExperience a {
+  color: #FFE725;
+}
+
+#projects a {
+  color: #137F00;
+}
+
+#education a {
+  color: #B21100;
 }
 
 #h2Map {
@@ -74,7 +90,7 @@ body {
 
 h1 {
   font-size: 40px;
-  color: #F5A623;
+  color: #F5AE23;
   line-height: 48px;
   display: inline;
 }
@@ -90,7 +106,7 @@ h2 {
 h3 {
   font-style: italic;
   font-size: 20px;
-  color: #000000;
+  color: #B21100;
   line-height: 22px;
   display: none;
 }
@@ -113,7 +129,7 @@ h2, h3, h4, h5 {
   font-style: italic;
   font-size: 14px;
   color: #999999;
-  line-height: 16px;
+  line-height: 20px;
   float: left;
 }
 
@@ -128,7 +144,7 @@ h2, h3, h4, h5 {
 
 p {
   font-size: 14px;
-  color: #333333;
+  color: #EEEEEE;
   line-height: 21px;
 }
 
@@ -180,6 +196,7 @@ a {
 
 /* TODO: Replace with image later */
 #header {
+  padding: 2% 5% 5% 5%;
   background-color:#111111;
 }
 
