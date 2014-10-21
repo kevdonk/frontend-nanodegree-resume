@@ -4,11 +4,67 @@
     font-family: 'Roboto', sans-serif;
 }
 
+body {
+  background-color: #333333;
+}
 
+
+
+#workExperience {
+  border-top: 3px solid #FFE725;
+  background-color: #111111;
+}
+
+#projects {
+  border-top: 3px solid #137F00;
+  background-color: #111111;
+}
+
+#education {
+  border-top: 3px solid #B21100;
+  background-color: #111111;
+}
+
+#map {
+  display: block;
+  height: 100%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+#mapDiv {
+  height: 400px;
+  width: 100%;
+  padding-bottom: 5%;
+  border-top: 3px solid #3069FF;
+  background-color: #111111;
+}
+
+#h2Work {
+  color: #FFE725;
+}
+
+#h2Education {
+  color: #B21100;
+}
+
+#h2Projects {
+  color: #137F00;
+}
+
+#h2Map {
+  color: #3069FF;
+}
+
+.vSymbol {
+  float: right;
+  font-weight: bold;
+}
 
 .education-entry, .work-entry, .project-entry {
   padding-left: 5%;
   padding-right: 5%;
+  display: none;
 }
 
 .project-entry img {
@@ -17,7 +73,6 @@
 }
 
 h1 {
-
   font-size: 40px;
   color: #F5A623;
   line-height: 48px;
@@ -37,6 +92,7 @@ h3 {
   font-size: 20px;
   color: #000000;
   line-height: 22px;
+  display: none;
 }
 
 h4 {
@@ -124,7 +180,7 @@ a {
 
 /* TODO: Replace with image later */
 #header {
-  background-color: #484848;
+  background-color:#111111;
 }
 
 .flex-box {
@@ -150,6 +206,7 @@ ul {
   padding: 10px;
   width: 200px;
   display: none;
+  border-radius: 50%;
 }
 
 img {
@@ -199,19 +256,6 @@ span {
   .welcome-message {
     display: none;
   }
-}
-
-#map {
-  display: block;
-  height: 100%;
-  margin-left: 5%;
-  margin-right: 5%;
-}
-
-#mapDiv {
-  height: 400px;
-  width: 100%;
-  padding-bottom: 5%;
 }
 
 @media only screen and (min-width: 750px) {

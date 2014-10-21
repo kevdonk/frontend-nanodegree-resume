@@ -34,7 +34,8 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
 
   <!-- More on helper.js in the class -->
   <script src="js/helper.js"></script>
-
+  <!-- script to toggle sections -->
+  <script src="js/toggle.js"></script>
 <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places"></script>
 
   <meta name="viewport" content="width=device-width">
@@ -52,19 +53,19 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
     </div>
     <div style='clear: both;'></div>
     <div id="workExperience" class='gray'>
-      <h2>Work Experience</h2>
+      <h2 id="h2Work">Work Experience</h2>
     </div>
     <div id="projects">
-      <h2>Projects</h2>
+      <h2 id="h2Projects">Projects</h2>
     </div>
     <div id="education" class='gray'>
-      <h2>Education</h2>
+      <h2 id="h2Education">Education</h2>
     </div>
     <div id="skillsChart">
       <h2>Skills Chart</h2>
     </div>
     <div id="mapDiv">
-      <h2>Where I've Lived and Worked</h2>
+      <h2 id="h2Map">Where I've Lived and Worked</h2>
     </div>
     <div id="letsConnect" class='dark-gray'>
       <h2 class='orange center-text'>Let's Connect</h2>
@@ -106,9 +107,9 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
   if(document.getElementsByClassName("skills-entry").length === 0) {
     document.getElementById("skillsChart").style.display = "none";
   }
-  if(document.getElementsByClassName("flex-item").length === 0) {
+  //if(document.getElementsByClassName("flex-item").length === 0) {
     document.getElementById("letsConnect").style.display = "none";
-  }
+  //}
   if(document.getElementById("map") == undefined) {
     document.getElementById("mapDiv").style.display = "none";
   }

@@ -28,11 +28,6 @@ var bio = {
 		$("#topContacts").prepend(HTMLgithub.replaceData(bio.contact.github));
 		$("#topContacts").prepend(HTMLtwitter.replaceData(bio.contact.twitter));
 		$("#topContacts").prepend(HTMLlocation.replaceData(bio.contact.location));
-		//write skills section
-		if(bio.skills.length > 0)
-				$("#header").append(HTMLskillsStart);
-		for (skill in bio.skills)
-			$("#skills").append(HTMLskills.replaceData(bio.skills[skill]));
 
 		//welcome message
 		$("#header").append(HTMLwelcomeMsg.replaceData(bio.message));
@@ -93,6 +88,8 @@ var education = {
 			$(".education-entry:last").append(HTMLonlineDates.replaceData(current.dates));
 		}
 
+		$("#h2Education").append('<span class="vSymbol">\u25bc</span>');
+
 	}
 }
 
@@ -118,6 +115,7 @@ var work =
 			$(".work-entry:last").append(HTMLworkLocation.replaceData(current.location));
 			$(".work-entry:last").append(HTMLworkDescription.replaceData(current.description));
 		}
+		$("#h2Work").append('<span class="vSymbol">\u25bc</span>');
 	}
 }
 
@@ -159,7 +157,14 @@ var projects = {
 
 
 		}
+		$("#h2Projects").append('<span class="vSymbol">\u25bc</span>');
+	}
+}
 
+var map = {
+	display : function(){
+		$("#mapDiv").append(googleMap);
+		$("#h2Map").append('<span class="vSymbol">\u25b2</span>');
 	}
 }
 
@@ -168,6 +173,5 @@ bio.display();
 work.display();
 projects.display();
 education.display();
+map.display();
 
-//draw map 
-$("#mapDiv").append(googleMap);
