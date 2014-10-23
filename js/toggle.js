@@ -3,8 +3,8 @@ $(document).ready(function(){
 
     $.fn.toggleArrow = function()
 	{
-			var arrow = this.find(".vSymbol").text();
-			this.find(".vSymbol").text(arrow == '\u25bc' ? '\u25b2' : '\u25bc');
+		var arrow = this.find(".vSymbol").text();
+		this.find(".vSymbol").text(arrow == '\u25bc' ? '\u25b2' : '\u25bc');
 	}
 
 
