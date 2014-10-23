@@ -127,7 +127,7 @@ var projects = {
 		"description": "Building web application to manage delivery driver routes and provide real-time directions via Google Maps on drivers' mobile devices",
 		"url": "http://mayoind.com/driver/",
 		"images": [
-		"img/dm.jpg"
+			"img/dm.jpg"
 		]
 	},
 	{
@@ -136,7 +136,7 @@ var projects = {
 		"description": "Manage website and forums of the C/C++ and PHP sections of a (then) popular coding community",
 		"url": "http://c.qb45.com",
 		"images": [
-		"http://www.qb45.com/link_qb45.gif"
+			"http://www.qb45.com/link_qb45.gif"
 		]
 	}
 
