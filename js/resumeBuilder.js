@@ -10,10 +10,10 @@ var bio = {
 	"name": "Kevin Mayo",
 	"role": "Developer",
 	"contact": {
-	"email": "kevin@mayoind.com",
-	"twitter": "@notkevdonk",
-	"github": "https://github.com/kevdonk/",
-	"location": "Edmonton, Alberta"
+		"email": "kevin@mayoind.com",
+		"twitter": "@notkevdonk",
+		"github": "https://github.com/kevdonk/",
+		"location": "Edmonton, Alberta"
 	},
 	"skills": [ "HTML", "CSS", "JavaScript", "PHP", "MySQL", "C/C++" ],
 	"pic": "img/donk.jpg",
@@ -96,14 +96,14 @@ var education = {
 var work =
 {
 	"jobs": [
-{
-	"employer": "Mayo Industrial & Automotive Sales Ltd.",
-	"title": "Whatever needs doing",
-	"location": "Edmonton, AB",
-	"dates": "Jan 2011 - Present",
-	"description": "Purchase, set up and maintain computers and network hardware and develop internal and external websites",
-	"url": "http://mayoind.com"
-}
+	{
+		"employer": "Mayo Industrial & Automotive Sales Ltd.",
+		"title": "Whatever needs doing",
+		"location": "Edmonton, AB",
+		"dates": "Jan 2011 - Present",
+		"description": "Purchase, set up and maintain computers and network hardware and develop internal and external websites",
+		"url": "http://mayoind.com"
+	}
 	],
 	display : function(){
 		//write job section
